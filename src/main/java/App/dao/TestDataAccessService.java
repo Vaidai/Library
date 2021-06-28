@@ -16,7 +16,6 @@ public class TestDataAccessService implements BookDao {
     private static List<Reservation> reservations = new ArrayList<>();
     private static List<User> users = new ArrayList<>();
 
-    // todo prijungti rasyma ir skaityma is json file.
 
     public TestDataAccessService() {
         DB.add(new Book(0, "name", "author2", "category2", "LT", Year.of(2000), "isbn", "guid"));
