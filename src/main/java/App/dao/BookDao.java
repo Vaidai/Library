@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface BookDao {
     List<Book> getAllBooks();
 
-    void save(Book book);
+    Book save(Book book);
 
     void deleteBookById(Integer id);
 

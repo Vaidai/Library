@@ -28,8 +28,8 @@ public class BookController {
     }
 
     @PostMapping(value = "/add", consumes = {"application/json"})
-    public void addBook(@Valid @RequestBody Book book) {
-        bookService.addBook(book);
+    public Book addBook(@Valid @RequestBody Book book) {
+        return bookService.addBook(book);
     }
 
     @GetMapping("/take/{userId}/{bookId}/{periodFrom}/{periodTo}")

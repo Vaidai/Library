@@ -33,10 +33,12 @@ public class TestDataAccessService implements BookDao {
     }
 
     @Override
-    public void save(Book book) {
+    public Book save(Book book) {
         Integer id = DB.size();
         if (book.getPublicationDate().isAfter(Year.of(1500)) && book.getPublicationDate().isBefore(Year.now())) {
-            DB.add(new Book(id, book.getName(), book.getAuthor(), book.getCategory(), book.getLanguage(), book.getPublicationDate(), book.getIsbn(), book.getGuid()));
+            Book newBook = new Book(id, book.getName(), book.getAuthor(), book.getCategory(), book.getLanguage(), book.getPublicationDate(), book.getIsbn(), book.getGuid());
+            DB.add(newBook);
+            return newBook;
         } else {
             throw new IllegalArgumentException("Release Year must be more than 1950 and less than now");
         }

@@ -24,8 +24,8 @@ public class BookService {
         return bookDao.getAllBooks();
     }
 
-    public void addBook(Book book) {
-        bookDao.save(book);
+    public Book addBook(Book book) {
+       return bookDao.save(book);
     }
 
     public void deleteBook(Integer id) {
