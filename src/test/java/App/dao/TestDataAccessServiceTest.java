@@ -75,4 +75,5 @@ class TestDataAccessServiceTest {
         Book capturedBook = bookArgumentCaptor.getValue();
         assertThat(capturedBook.getGuid()).isEqualTo(newBook.getGuid());
     }
+
 }
